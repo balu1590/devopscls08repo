@@ -6,7 +6,7 @@
      group_id: doc-examples
      artifact_id: lambda-java-example
      version: 1.1
-     repository_url: 'http://54.196.0.219:8081/repository/maven-releases/'
+     repository_url: 'http://172.31.49.52:8081/repository/maven-releases/'
      username: admin
      password: admin123
      dest: /tmp/
