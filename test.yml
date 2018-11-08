@@ -1,5 +1,5 @@
 ---
-- hosts: tomcat
+- hosts: localhost
   become: true
   tasks:
   - maven_artifact:
