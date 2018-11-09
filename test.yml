@@ -1,10 +1,10 @@
 ---
-- hosts: tomcat
+- hosts: localhost
   become: true
   tasks:
   - maven_artifact:
      group_id: doc-examples
      artifact_id: lambda-java-example
      version: 1.1
-     repository_url: 'http://172.31.49.52:8081/repository/maven-releases/'
-     dest: /var/lib/tomcat8/webapps
+     repository_url: 'https://nexus.induseoffice.com/repository/maven-releases/'
+     dest: /tmp/
