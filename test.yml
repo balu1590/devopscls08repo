@@ -6,5 +6,5 @@
      group_id: doc-examples
      artifact_id: lambda-java-example
      version: 1.1
-     repository_url: 'https://nexus.induseoffice.com/repository/maven-releases/'
+     repository_url: 'http://52.23.208.94:8081/repository/maven-releases/'
      dest: /tmp/
