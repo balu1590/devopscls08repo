@@ -34,22 +34,65 @@
           </execution>
         </executions>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-pmd-plugin</artifactId>
-	<version>3.10.0</version>
-        <configuration>
-            <failOnViolation>true</failOnViolation> <!-- this is actually true by default, but can be disabled -->
-            <printFailingErrors>true</printFailingErrors>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>check</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>	    
+     <plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-site-plugin</artifactId>
+<version>3.0-beta-3</version>
+<executions>
+<execution>
+<id>attach-descriptor</id>
+<goals>
+<goal>attach-descriptor</goal>
+</goals>
+</execution>
+</executions>
+<configuration>
+<reportPlugins>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-project-info-reports-plugin</artifactId>
+<version>2.2</version>
+<reports>
+<report>index</report>
+<report>summary</report>
+<report>project-team</report>
+<report>cim</report>
+<report>scm</report>
+</reports>
+</plugin>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-jxr-plugin</artifactId>
+<version>2.2</version>
+</plugin>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-surefire-report-plugin</artifactId>
+<version>2.6</version>
+</plugin>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-checkstyle-plugin</artifactId>
+<version>2.6</version>
+<configuration>
+<configLocation>${sca.dir}/checkstyle-5.3/my-checks.xml
+</configLocation>
+</configuration>
+</plugin>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-pmd-plugin</artifactId>
+<version>2.5</version>
+<configuration>
+<rulesets>
+<ruleset>${sca.dir}/pmd-4.2.5/my-rules.xml</ruleset>
+</rulesets>
+<targetJdk>${java-api.version}</targetJdk>
+</configuration>
+</plugin>
+</reportPlugins>
+</configuration>
+</plugin>
     </plugins>
     </build>	    
 </project>	    
